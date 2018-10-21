@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>List | A trial spider page</title>
+        <style>
+            .list {
+                font: "Microsoft YaHei", 14px,
+            }
+            .listhead {
+                color:rgb(52, 73, 165)
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Latest Bulletins</h1>
+        {% if latest_list %}
+            <table class="list">
+                <tr class="listhead">
+                    <th>No.</th>
+                    <th>Source</th>
+                    <th>Title</th>
+                    <th>Time</th>
+                    <th>Content</th>
+                </tr>
+                {% for res in latest_list %}
+                    <tr>
+                        <th>{{ res.id }}</th>
+                        <th>{{ res.source }}</th>
+                        <th>{{ res.title }}</th>
+                        <th>{{ res.time }}</th>
+                        <th>{{ res.content }}</th>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>No Bulletins Available.</p>
+        {% endif %}
+    </body>
+</html>

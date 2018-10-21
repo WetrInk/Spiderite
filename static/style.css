@@ -1,0 +1,41 @@
+#botton>a{
+    display: inline-block;
+    text-decoration: none;
+    background-color: white;
+    color: #e01414;
+    border:1px solid rgb(218, 46, 55);
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: 19px;
+    font-family: 'Charlie Display';
+    font-weight:bold;
+    border-radius:3px;
+    
+    -webkit-transition:all linear 0.30s;
+    -moz-transition:all linear 0.30s;
+    transition:all linear 0.30s;
+}
+
+#botton>a:hover {
+    background-color: rgb(243, 217, 217);
+}
+
+.center {
+    position: absolute;
+    margin: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.notes {
+    text-transform : uppercase;
+    text-align : center;
+    color: rgb(23, 80, 138);
+    font-family: 'Microsoft Yahei';
+    font-size: 12px;
+    font-weight: 200;
+    letter-spacing: -1px;
+}
