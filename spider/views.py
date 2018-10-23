@@ -22,7 +22,7 @@ def listing(request):
     context = {'latest_list' : latest_list}
     return render(request, 'spider/list.html', context) 
 
-def searching():
-    pass
+def searching(request):
+    return render(request, 'spider/search.html')
 
 
