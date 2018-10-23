@@ -1,4 +1,4 @@
-#botton>a{
+.botton>a{
     display: inline-block;
     text-decoration: none;
     background-color: white;
@@ -18,7 +18,7 @@
     transition:all linear 0.30s;
 }
 
-#botton>a:hover {
+.botton>a:hover {
     background-color: rgb(243, 217, 217);
 }
 
