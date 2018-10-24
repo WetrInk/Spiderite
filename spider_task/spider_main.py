@@ -3,6 +3,7 @@ import urllib.request
 from bs4 import BeautifulSoup
 import re
 from urllib.parse import urljoin 
+import datetime
 
 class SpiderMain(object):
     def __init__(self):
@@ -41,7 +42,7 @@ class SpiderMain(object):
 
         for url in urls:
             title = 'None'
-            time = 'None'
+            time = ''
             content = 'None'
             page_cont = self.downloader.download(url)
 
@@ -77,7 +78,11 @@ class SpiderMain(object):
                 # end of spacial
             
                 page_result['title'] = title
-                page_result['time'] = time
+                try:
+                    page_result['time'] = [datetime.date(*map(int,time.split('-'))), time]
+                    # 0 for datetime and 1 for isoformat'YYYY-MM-DD' string
+                except ValueError:
+                    print("时间格式转换失败……")
                 page_result['source'] = url
                 page_result['content'] = content[0:140] + '...' # the artical is always too long to print out.
 

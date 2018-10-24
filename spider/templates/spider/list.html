@@ -3,25 +3,26 @@
     <head>
         <title>List | A trial spider page</title>
         <style>
-            .list {
-                font: "Microsoft YaHei", 14px,
+            .listbody {
+                font: 'Microsoft Yahei Light','Microsoft Yahei', 14px, 200;
             }
             .listhead {
-                color:rgb(52, 73, 165)
+                color: rgb(52, 73, 165);
+                font: 'Microsoft Yahei', 20px, 500;
             }
         </style>
     </head>
     <body>
         <h1>Latest Bulletins</h1>
         {% if latest_list %}
-            <table class="list">
+            <table>
                 <tr class="listhead">
                     <th>No.</th>
                     <th>Source</th>
                     <th>Title</th>
                     <th>Time</th>
                     <th>Content</th>
-                </tr>
+                </tr class="listbody">
                 {% for res in latest_list %}
                     <tr>
                         <th>{{ res.id }}</th>
@@ -33,7 +34,8 @@
                 {% endfor %}
             </table>
         {% else %}
-            <p>No Bulletins Available.</p>
+            <p>No Bulletins Available.</p><br />
+            <p>If you're searching for something, please check your input.</p>
         {% endif %}
     </body>
 </html>

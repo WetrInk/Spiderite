@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+{% load static %}
+<HTML>
+    <head>
+        <title>Search | A trial spider page</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+    </head>
+    <body>
+        <div class="center">
+            Search for title:
+            <form id="search" action="/result/1/" method="POST">{% csrf_token %}
+                <input type="search" name="search1" placeholder="Keywords for title..." autocomplete="off" />
+                <input type="submit" value="Submit" />
+            </form><br /><br />
+            Search for content:
+            <form id="search" action="/result/1/" method="POST">{% csrf_token %}
+                <input type="search" name="search1" placeholder="Keywords for content..." autocomplete="off" />
+                <input type="submit" value="Submit" />
+            </form><br /><br />
+            Search for time<span style="font-style:italic">(in the given time range):</span><br />
+            plz input in form of <span style="color: red;">YYYY-MM-DD</span>
+            <form id="search" action="/result/2/" method="POST">{% csrf_token %}
+                * Start time: <input type="text" name="timeStart" placeholder="YYYY-MM-DD" /><br />
+                * End time: <input type="text" name="timeEnd" placeholder="YYYY-MM-DD" /><br />
+                <input type="submit" value="Submit"/>
+            </form>
+        </div>
+    </body>
+</HTML>
